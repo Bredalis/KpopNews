@@ -1,0 +1,24 @@
+{% from "Macros.jinja2" import header, footer %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>KpopNews/Página No Encontrada</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+	<link rel="stylesheet" href="{{ url_for('static', filename='CSS/404.css') }}">
+</head>
+<body>
+	<div class="contenido">
+		{{ header() }}
+
+		<main>
+			<img src="{{ url_for('static', filename='IMG/404.gif') }}" alt="Gif 404"><br><br>
+			<a href="{{ url_for('home') }}">Oops... No se encontró la página<br>Ir a la <span>página principal</span></a>
+		</main>
+	</div>
+
+	{{ footer() }}
+</body>
+</html>

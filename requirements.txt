@@ -1,0 +1,8 @@
+Flask
+python-dotenv
+pymongo[srv]
+feedparser
+python-dateutil
+requests
+beautifulsoup4
+gunicorn

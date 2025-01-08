@@ -1,0 +1,66 @@
+{% from "Macros.jinja2" import header, footer %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>KpopNews/Chat IA</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+	<link rel="stylesheet" href="{{ url_for('static', filename='CSS/Chat_IA.css') }}">
+</head>
+<body>
+	<div class="contenido">
+		{{ header() }}
+
+		<main>
+			<div class="chat">
+				<a href="https://hf.co/chat/assistant/676eba0d9d17134d370ecca0" target="_blank">
+                    <img src="{{ url_for('static', filename='IMG/Chat_Clara.png') }}" alt="Experto en Noticias de Kpop" class="zoom">
+                </a>
+			</div>
+
+			<section class="gifs">
+				<img src="{{ url_for('static', filename='IMG/BT21_1.gif') }}" alt="BT21">
+				<img src="{{ url_for('static', filename='IMG/BT21_2.gif') }}" alt="BT21">
+			</section>
+
+			<section class="informacion">
+				<h1>Chat K-pop con Clara</h1>
+				<p>
+					¡Bienvenido al rincón más interactivo de nuestra página de noticias de K-pop! Aquí podrás conversar con Clara, nuestra asistente virtual especializada en el fascinante mundo del K-pop y la música coreana. Clara no es solo un modelo de inteligencia artificial, ¡es una apasionada ARMY de 19 años cuyo bias es Jin de BTS! Su entusiasmo, conocimientos y personalidad amigable hacen que cada interacción sea única y emocionante.
+				</p>
+			</section>
+
+			<div class="como-usarlo">
+	            <h2>¿Cómo puedes <span>interactuar</span>?</h2>
+
+	            <section>
+	                <h3><span>01</span><br> Inicia Sesión</h3>
+	                <p>
+						Haz clic en el enlace de Carla para acceder directamente al chatbot. Luego, se te solicitará registrarte; una vez que completes este paso, ¡podrás empezar a usar el chatbot de inmediato!
+	                </p>
+	            </section>
+
+	            <section>
+	                <h3><span>02</span> <br> Inicia una Conversación</h3>
+	                <p>
+	                	Para empezar a chatear, solo ingresa tu primer mensaje en la barra de texto que dice 'Pregunta cualquier cosa' o selecciona uno de los mensajes predeterminados. Así comenzarás la conversación y podrás interactuar con el chatbot de inmediato.
+	                </p>
+	            </section>
+
+	            <section>
+	                <h3><span>03</span> <br> Explora y Aprende</h3>
+	                <p>
+	                    No olvides explorar los otros chatbots disponibles. Solo tienes que hacer clic en el botón 
+	                    'Asistentes' en la barra lateral izquierda para descubrir una variedad de chatbots con los que 
+	                    podrás interactuar y aprender más.
+	                </p>
+	            </section>
+        	</div>
+		</main>
+	</div>
+
+	{{ footer() }}
+</body>
+</html>

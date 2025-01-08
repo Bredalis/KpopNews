@@ -1,0 +1,43 @@
+{% from "Macros.jinja2" import header, footer %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>KpopNews/Búsqueda</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+	<link rel="stylesheet" href="{{ url_for('static', filename='CSS/Busqueda.css') }}">
+</head>
+<body>
+	<div class="contenido">
+		{{ header() }}
+
+		<main>
+			<div class="img">
+				<img src="{{ url_for('static', filename='IMG/Stray_Kids.jpg') }}" alt="Gif">
+			</div>
+
+			<div class="noticias-1">
+				{% if articulos %}
+				    {% for articulo in articulos %}
+				        <section>
+				            <img src="{{ articulo.img if articulo.img else url_for('static', filename='IMG/Noticia_' ~ (loop.index % 3 if loop.index % 3 != 0 else 3) ~ '.jpg') }}" alt="KpopNews">
+				            <p>
+				                <a href="{{ url_for('plantilla', titulo=articulo['título']) }}">
+				                    <cite>{{ articulo["publicado"] }}</cite><br>
+				                    {{ articulo["título"] }}
+				                </a>
+				            </p>
+				        </section>
+				    {% endfor %}
+				{% else %}
+				    <p>No hay resultados de la búsqueda de '{{ dato_busqueda }}'</p>
+				{% endif %}
+			</div>
+		</main>
+	</div>
+
+	{{ footer() }}
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% macro header() %}
+	<header>
+		<a href="{{ url_for('static', filename='index.html') }}">
+			<img src="{{ url_for('static', filename='IMG/Logo.png') }}" alt="Logo" id="logo" title="KpopNews" class="zoom">
+		</a>
+		<nav>
+			<ul>
+				<li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('noticias') }}">Noticias</a></li>
+                <li><a href="{{ url_for('chat_ia') }}">Chat IA</a></li>
+                <li><a href="{{ url_for('sobre_nosotros') }}">Sobre Nosotros</a></li>
+			</ul>
+		</nav>
+	</header>
+{% endmacro %}
+
+{% macro footer() %}
+	<div class="footer">
+		<footer>
+			<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='IMG/Logo.png') }}" alt="Logo" id="logo" title="KpopNews" class="zoom"></a>
+	        <div>
+	            <ul>
+	                <li><a href="{{ url_for('home') }}">Home</a></li>
+	                <li><a href="{{ url_for('noticias') }}">Noticias</a></li>
+	                <li><a href="{{ url_for('chat_ia') }}">Chat IA</a></li>
+	                <li><a href="{{ url_for('sobre_nosotros') }}">Sobre Nosotros</a></li>
+	            </ul>
+	            <ul>
+	                <li><a href="https://github.com/Bredalis" target="_blank">GitHub</a></li>
+	                <li><a href="https://www.linkedin.com/in/bredalis-gautreaux/" target="_blank">LinkedIn</a></li>
+	                <li><a href="https://es.stackoverflow.com/users/293358/bredalis-gautreaux" target="_blank">Stack Overflow</a></li>
+	                <li><a href="https://huggingface.co/chat/assistants?user=Bredalis" target="_blank">Hugging Face</a></li>
+	            </ul>
+	            <ul>
+	                <li><a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">Licencia Pública General GNU v3.0</a></li>
+	            </ul>
+	            <p>© 2024 KpopNews <br> Todos los derechos reservados</p>
+	            <br><br>
+	        </div>
+		</footer>
+	</div>
+{% endmacro %}

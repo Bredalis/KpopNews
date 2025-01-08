@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KpopNews/Inicio de Sesión</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Inicio_Sesion.css') }}">
+</head>
+<body>
+    <header>
+        <h1>KpopNews</h1>
+        <p>Únete a los usuarios que son<br>parte de <span>KpopNews</span></p>
+        <img src="{{ url_for('static', filename='IMG/Kpop_Inicio_Sesion.gif') }}" alt="Inicio Sesión">
+    </header>
+
+    <main>
+        <form action="{{ url_for('inicio_sesion') }}" method="POST" class="segundo-contenido">
+            <label for="nombre-usuario">Nombre de Usuario: </label>
+            <img src="{{ url_for('static', filename='IMG/Usuario.svg') }}" alt="Usuario" height="25">
+            <br><br>
+            <input type="text" id="nombre-usuario" name="nombre-usuario" placeholder="ej: Miguel Ubiera" required>
+
+            <br><br>
+            <label for="correo">Correo Electrónico: </label>
+            <img src="{{ url_for('static', filename='IMG/Email.svg') }}" alt="Usuario" height="25">
+            <br><br>
+            <input type="email" id="correo" name="correo" placeholder="ej: ejemplo@gmail.com" required>
+
+            <br><br>
+            <label for="contraseña">Contraseña: </label>
+            <img src="{{ url_for('static', filename='IMG/Contraseña.svg') }}" alt="Usuario" height="25">
+            <br><br>
+            <input type="password" id="contraseña" name="clave" placeholder="******" required>
+
+            <br><br>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </main>
+</body>
+</html>

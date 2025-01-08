@@ -1,0 +1,75 @@
+{% from "Macros.jinja2" import header, footer %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>KpopNews/Sobre Nosotros</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+	<link rel="stylesheet" href="{{ url_for('static', filename='CSS/Sobre_Nosotros.css') }}">
+</head>
+<body>
+	<div class="contenido">
+		{{ header() }}
+
+		<main>
+			<section class="portada">
+				<img src="{{ url_for('static', filename='IMG/Kpop_Sobre_Nosotros.gif') }}" alt="Portada">
+			</section>
+
+			<div>
+				<section>
+					<h2>Bienvenida</h2>
+					<p>
+						¡Bienvenidos a KpopNews, tu destino número uno para las noticias más frescas y emocionantes del mundo del K-pop! Somos un portal creado por y para fans, dedicado a mantenerte informado sobre todo lo relacionado con la ola coreana que ha conquistado el mundo.
+					</p>
+				</section>
+				<section>
+					<h2>Nuestra Misión</h2>
+					<p>
+						En KpopNews, nuestro objetivo es conectar a los fans de todo el mundo con sus idols y grupos favoritos. Queremos ser tu fuente confiable de noticias, análisis y contenido único sobre la música, los conciertos, y la cultura K-pop. Nos esforzamos por ser un puente entre los fans y la magia de la industria coreana.
+					</p>
+				</section>
+				<section>
+					<h2>¿Cómo Empezamos?</h2>
+					<p>
+						Nacimos en 2020 como un pequeño blog gestionado por un grupo de amigos apasionados por el K-pop. Con el tiempo, nuestra dedicación y amor por esta cultura nos permitió crecer, convirtiéndonos en una plataforma reconocida por miles de seguidores alrededor del mundo.
+					</p>
+				</section>
+				<section>
+					<h2>¿Qué Puedes Encontrar en KpopNews?</h2>
+					<ul>
+						<li>Noticias exclusivas sobre tus idols y grupos favoritos.</li>
+						<li>Análisis detallados de comebacks, álbumes y videoclips.</li>
+						<li>Cobertura de eventos como conciertos y premiaciones.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Nuestro Equipo</h2>
+					<p>
+						Somos un equipo multicultural de fans, periodistas y creativos que comparten una única pasión: el K-pop. Nos dedicamos a ofrecer contenido auténtico, entretenido y de alta calidad, siempre con el corazón de un verdadero fan.
+					</p>
+				</section>
+				<section>
+					<h2>Únete a Nuestra Newsletter</h2>
+					<p>
+						KpopNews no es solo un sitio web; es una comunidad global que vive el K-pop al máximo. Suscríbete a nuestra newsletter y sé parte de un grupo exclusivo donde compartimos teorías, discutimos rumores y celebramos cada comeback. Únete a miles de fans que, como tú, sienten el K-pop como un estilo de vida. ¡No te pierdas ninguna noticia y mantente actualizado con todo lo que está pasando en el mundo del K-pop!
+					</p>
+					<button>
+						<a href="{{ url_for('inicio_sesion') }}">Unirse</a>
+					</button>
+				</section>
+				<section>
+					<h2>¿Tienes Preguntas o Sugerencias?</h2>
+					<p>
+						Nos encantaría saber de ti. Si tienes alguna idea, sugerencia o simplemente quieres compartir tu entusiasmo por el K-pop, puedes escribirnos a nuestro correo: kpopnews472@gmail.com. ¡Estamos aquí para escucharte!
+					</p>
+				</section>
+			</div>
+		</main>
+	</div>
+
+	{{ footer() }}
+</body>
+</html>

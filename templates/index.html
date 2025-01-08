@@ -1,0 +1,69 @@
+{% from "Macros.jinja2" import header, footer %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>KpopNews/Home</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='IMG/Logo.png') }}" type="image/x-icon">
+	<link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+	<div class="contenido">
+		{{ header() }}
+
+		<main>
+			<section class="noticia-principal">
+				<br>
+				<h3>LO MEJOR DE LA SEMANA</h3>
+				<h4>KpopNews - <cite>LO ÚLTIMO EN NOTICIAS</cite></h4>
+
+				<h1>Top <span>KpopNews</span>:<br>Lo mejor del Kpop</h1>
+				<p><cite>#Kpop</cite> <cite>#BTS</cite> <cite>#NewJeans</cite> <cite>#Twice</cite></p>
+				<button><a href="{{ url_for('noticias') }}">Ver Noticias</a></button>
+				<button><a href="{{ url_for('mostrar_newsletter') }}">Newsletter</a></button>
+
+				<img src="{{ url_for('static', filename='IMG/Kpop_Home.jpg') }}" alt="Kpop">
+			</section>
+
+			<section class="noticia-secundaria">
+	            {% for articulo in articulos[:3] %}
+		            <section class="zoom">
+		            	<h4>KpopNews - <cite>{{ articulo["publicado"] }}</cite></h4>
+		            	<p>
+		            		<a href="{{ url_for('plantilla', titulo=articulo['título']) }}">{{ articulo["título"] }}</a>
+		            	</p>
+		            </section>
+	            {% endfor %}
+			</section>
+
+			<article>
+				<form action="/búsqueda" method="POST">
+					<textarea placeholder="BTS, BLACKPINK, NewJeans..." id="busqueda" name="busqueda"></textarea>
+					<button type="submit">
+	                	<a href="{{ url_for('busqueda') }}">
+	                		<img src="{{ url_for('static', filename='IMG/Enviar_Datos.svg') }}" alt="Enviar datos" height="35" title="Enviar">
+	                	</a>
+	            	</button>
+				</form>
+
+            	<h2>Recomendaciones</h2>
+            	<img src="{{ url_for('static', filename='IMG/Kpop_Recomendaciones.jpg') }}" alt="Kpop" id="kpop-recomendacion">
+
+            	{% for articulo in articulos[3:6] %}
+		            <section>
+		            	<h4>KpopNews - <cite>{{ articulo["publicado"] }}</cite></h4>
+		            	<p>
+		            		<a href="{{ url_for('plantilla', titulo=articulo['título']) }}">{{ articulo["título"] }}</a>
+		            	</p>
+		            	<img src="{{ url_for('static', filename='IMG/Noticia_') }}{{ loop.index }}.jpg" alt="Noticia {{ loop.index }}" class="zoom">
+		            </section>
+	            {% endfor %}
+			</article>
+		</main>
+	</div>
+
+	{{ footer() }}
+</body>
+</html>
